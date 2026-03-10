@@ -24,6 +24,7 @@
 		"cs:fix": "php-cs-fixer fix",
 		"openapi": "generate-spec --verbose && (npm run typescript:generate || echo 'Please manually regenerate the typescript OpenAPI models')",
 		"psalm": "psalm --no-cache --threads=$(nproc)",
+		"psalm:prepush": "psalm --threads=$(nproc) --output-format=text",
 		"psalm:update-baseline": "psalm --threads=$(nproc) --update-baseline --set-baseline=tests/psalm-baseline.xml",
 		"post-install-cmd": [
 			"@composer bin all install --ansi",

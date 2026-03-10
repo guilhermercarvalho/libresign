@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2026 LibreCode coop and contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+reuse lint --quiet
+REUSE_EXIT=$?
+
+composer cs:check
+CS_EXIT=$?
+
+composer psalm:prepush
+PSALM_EXIT=$?
+
+if [ $REUSE_EXIT -ne 0 ] || [ $CS_EXIT -ne 0 ] || [ $PSALM_EXIT -ne 0 ]; then
+    exit 1
+fi
