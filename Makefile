@@ -40,10 +40,15 @@ else
 endif
 
 # Dev env management
-dev-setup: clean clean-dev composer npm-install husky-init
+dev-setup: clean clean-dev composer npm-ci
+
+local-dev-setup: clean clean-dev composer npm-install husky-init
+
+npm-ci:
+	npm ci
 
 npm-install:
-	npm ci
+	npm install
 
 husky-init:
 	npx husky init

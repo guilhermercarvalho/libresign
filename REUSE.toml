@@ -60,7 +60,8 @@ path = [
     "tsconfig.json",
     "vendor-bin/**/composer.json",
     "vendor-bin/**/composer.lock",
-	".husky/_/**"
+	".husky/_/**",
+	"commitlint.config.js"
 ]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2020-2024 LibreCode coop and contributors"
