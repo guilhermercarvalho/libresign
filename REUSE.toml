@@ -59,7 +59,8 @@ path = [
     "tests/psalm-baseline.xml",
     "tsconfig.json",
     "vendor-bin/**/composer.json",
-    "vendor-bin/**/composer.lock"
+    "vendor-bin/**/composer.lock",
+	".husky/_/**"
 ]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2020-2024 LibreCode coop and contributors"

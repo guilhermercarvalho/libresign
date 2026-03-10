@@ -20,7 +20,8 @@
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui --ui-host=0.0.0.0 --ui-port=9323",
-    "test:e2e:report": "playwright show-report"
+    "test:e2e:report": "playwright show-report",
+    "prepare": "husky"
   },
   "dependencies": {
     "@codemirror/autocomplete": "^6.18.3",
@@ -91,10 +92,25 @@
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.8.1",
     "happy-dom": "^20.7.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.3.2",
     "mailpit-api": "^1.7.2",
     "openapi-typescript": "^7.13.0",
     "typescript": "^5.9.3",
     "vite": "^7.1.10",
     "vitest": "^4.0.18"
+  },
+  "lint-staged": {
+    "*.php": "php -l",
+    "*.{js,ts,vue}": [
+      "npm run lint --fix",
+      "npm run ts:check --noEmit"
+    ],
+    "*.{scss,css,vue}": [
+      "npm run stylelint --fix"
+    ],
+    "*.{json,md,yml}": [
+      "prettier --check"
+    ]
   }
 }
